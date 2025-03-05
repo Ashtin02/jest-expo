@@ -10,7 +10,7 @@ value: string;
 
 const TodoListManager = () => {
   const [todo, setTodo] = useState('');
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<TodoItem[]>([]);
 
   const addTodo = () => {
     if (todo.trim()) {
@@ -19,7 +19,7 @@ const TodoListManager = () => {
     }
   };
 
-  const removeTodo = (key) => {
+  const removeTodo = (key:string) => {
     setTodos(todos.filter((item) => item.key !== key));
   };
 
